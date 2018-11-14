@@ -5,11 +5,11 @@ Number and name of feature: #1 Display Images
 
 Estimate of time needed to complete: 1 hour
 
-Start time: _____
+Start time: 10:15
 
-Finish time: _____
+Finish time: 11:02
 
-Actual time needed to complete: _____
+Actual time needed to complete: 47 minutes
 
 -----------
 
