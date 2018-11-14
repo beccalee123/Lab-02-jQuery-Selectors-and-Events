@@ -20,6 +20,7 @@ Horns.prototype.render = function() {
 
   hornClone.find('h2').text(this.title);
   hornClone.find('img').attr('src', this.image_url);
+  hornClone.find('img').attr('alt', this.description);
   hornClone.find('p').text(this.description);
   hornClone.removeClass('clone');
   hornClone.attr('class', this.title);
