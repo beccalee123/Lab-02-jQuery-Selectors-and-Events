@@ -1,5 +1,9 @@
 'use strict';
 
+//++++++++++++++++++++
+// Photo rendering
+//++++++++++++++++++++
+
 function Horns(horn) {
   this.image_url = horn.image_url;
   this.title = horn.title;
@@ -24,7 +28,12 @@ Horns.prototype.render = function() {
   hornClone.find('p').text(this.description);
   hornClone.removeClass('clone');
   hornClone.attr('class', this.title);
+
+  //Fills select menu
+  $('select').append(`<option value="${this.keyword}">${this.keyword}</option>`);
 };
+
+
 
 Horns.readJson = () => {
   $.get('data/page-1.json', 'json').then(data => {
@@ -34,8 +43,21 @@ Horns.readJson = () => {
   }).then(Horns.loadHorns);
 };
 
+
+
 Horns.loadHorns = () => {
   Horns.allHorns.forEach( horn => horn.render() );
 }
 
 $( () => Horns.readJson() );
+
+
+//++++++++++++++++++++
+//Filtering Images
+//++++++++++++++++++++
+
+
+
+
+//Create a select element event listener (change)
+//
