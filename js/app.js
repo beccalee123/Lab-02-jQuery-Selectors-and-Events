@@ -14,6 +14,10 @@ function Horns(horn) {
 
 Horns.allHorns = [];
 
+
+let selectMenuArray = [];
+
+
 Horns.prototype.render = function() {
   $('main').append('<div class="clone"></div>');
   let hornClone = $('.clone');
@@ -30,9 +34,17 @@ Horns.prototype.render = function() {
   hornClone.attr('class', this.title);
 
   //Fills select menu
-  $('select').append(`<option value="${this.keyword}">${this.keyword}</option>`);
+
+  if (!selectMenuArray.includes(this.keyword)) {
+    selectMenuArray.push(this.keyword);
+  }
 };
 
+const fillSelect = () => {
+  selectMenuArray.forEach((value) => {
+    $('select').append(`<option value="${value}">${value}</option>`);
+  });
+}
 
 
 Horns.readJson = () => {
@@ -47,6 +59,7 @@ Horns.readJson = () => {
 
 Horns.loadHorns = () => {
   Horns.allHorns.forEach( horn => horn.render() );
+  fillSelect();
 }
 
 $( () => Horns.readJson() );
@@ -55,7 +68,6 @@ $( () => Horns.readJson() );
 //++++++++++++++++++++
 //Filtering Images
 //++++++++++++++++++++
-
 
 
 
