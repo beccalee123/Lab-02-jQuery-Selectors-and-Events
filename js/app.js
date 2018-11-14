@@ -1,9 +1,5 @@
 'use strict';
 
-//++++++++++++++++++++
-// Photo rendering
-//++++++++++++++++++++
-
 function Horns(horn) {
   this.image_url = horn.image_url;
   this.title = horn.title;
@@ -31,7 +27,7 @@ Horns.prototype.render = function() {
   hornClone.find('img').attr('alt', this.description);
   hornClone.find('p').text(this.description);
   hornClone.removeClass('clone');
-  hornClone.attr('class', this.title);
+  hornClone.attr('class', this.keyword);
 
   //Fills select menu
 
@@ -64,12 +60,10 @@ Horns.loadHorns = () => {
 
 $( () => Horns.readJson() );
 
+// Select menu handling/filtering
 
-//++++++++++++++++++++
-//Filtering Images
-//++++++++++++++++++++
-
-
-
-//Create a select element event listener (change)
-//
+$('#hornfilter').on('change', function () {
+  let $selection = $(this).val();
+  $('div').hide();
+  $(`.${$selection}`).show();
+});

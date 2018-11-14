@@ -9,9 +9,9 @@ Estimate of time needed to complete: 1 hour
 
 Start time: 10:15
 
-Finish time: 11:02
+Finish time: 11:12
 
-Actual time needed to complete: 47 minutes
+Actual time needed to complete: 57 minutes
 
 -----------
 
@@ -19,11 +19,11 @@ Number and name of feature: #2 Filter Images
 
 Estimate of time needed to complete: 2 hours
 
-Start time: _____
+Start time: 11:27
 
-Finish time: _____
+Finish time: 1:17
 
-Actual time needed to complete: _____
+Actual time needed to complete: We took lunch during this time, so we spent about 50 minutes on this one.
 
 -----------
 
