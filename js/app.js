@@ -10,6 +10,10 @@ function Horns(horn) {
 
 Horns.allHorns = [];
 
+
+let selectMenuArray = [];
+
+
 Horns.prototype.render = function() {
   $('main').append('<div class="clone"></div>');
   let hornClone = $('.clone');
@@ -20,10 +24,24 @@ Horns.prototype.render = function() {
 
   hornClone.find('h2').text(this.title);
   hornClone.find('img').attr('src', this.image_url);
+  hornClone.find('img').attr('alt', this.description);
   hornClone.find('p').text(this.description);
   hornClone.removeClass('clone');
-  hornClone.attr('class', this.title);
+  hornClone.attr('class', this.keyword);
+
+  //Fills select menu
+
+  if (!selectMenuArray.includes(this.keyword)) {
+    selectMenuArray.push(this.keyword);
+  }
 };
+
+const fillSelect = () => {
+  selectMenuArray.forEach((value) => {
+    $('select').append(`<option value="${value}">${value}</option>`);
+  });
+}
+
 
 Horns.readJson = () => {
   $.get('data/page-1.json', 'json').then(data => {
@@ -33,8 +51,19 @@ Horns.readJson = () => {
   }).then(Horns.loadHorns);
 };
 
+
+
 Horns.loadHorns = () => {
   Horns.allHorns.forEach( horn => horn.render() );
+  fillSelect();
 }
 
 $( () => Horns.readJson() );
+
+// Select menu handling/filtering
+
+$('#hornfilter').on('change', function () {
+  let $selection = $(this).val();
+  $('div').hide();
+  $(`.${$selection}`).show();
+});
