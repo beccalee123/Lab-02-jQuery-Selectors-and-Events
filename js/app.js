@@ -12,7 +12,7 @@ Horns.allHorns = [];
 
 Horns.prototype.render = function() {
   $('main').append('<div class="clone"></div>');
-  let hornClone = $('div[class="clone"]'); //change dis?
+  let hornClone = $('.clone');
 
   let hornHTML = $('#photo-template').html();
 
