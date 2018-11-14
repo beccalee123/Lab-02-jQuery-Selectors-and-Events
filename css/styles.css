@@ -1,3 +1,45 @@
+body {
+  width: 960px;
+  margin: 0px auto;
+}
+
 img {
-  width: 300px;
+  width: 430px;
+  height: 430px;
+  margin: 20px;
+  border: 3px solid black;
+  object-fit: contain;
+
+}
+
+h1 {
+  font-family: 'Pirata One', cursive;
+  font-size: 40px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+div {
+  float: left;
+}
+
+p {
+  width: 250px;
+  height: 50px;
+  margin: 10px auto;
+}
+
+select {
+  display: block;
+  margin: 30px auto;
+}
+
+footer {
+  display: block;
+  clear: both;
 }

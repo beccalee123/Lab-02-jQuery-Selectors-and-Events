@@ -55,6 +55,7 @@ Horns.readJson = () => {
 
 Horns.loadHorns = () => {
   Horns.allHorns.forEach( horn => horn.render() );
+  $('#photo-template').remove();
   fillSelect();
 }
 
