@@ -3,6 +3,9 @@ Lab 2 for Code Fellows seattle-301d40. Paired programming by Andrew Quamme and B
 
 Special thank to [demo-read-json demo](https://github.com/beccalee123/seattle-301d40/tree/master/02-jquery-selectors-events/demo-read-json) by the Code Fellows staff for the excellent guidance on our photo rendering.  
 
+
+## Day 1
+
 Number and name of feature: #1 Display Images
 
 Estimate of time needed to complete: 1 hour
@@ -36,3 +39,54 @@ Start time: 1:25pm
 Finish time: 1:50pm
 
 Actual time needed to complete: 25 minutes
+
+-----------
+## Day 2
+
+Number and name of feature: #1 Pagination
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 
+
+Finish time: 
+
+Actual time needed to complete: 
+
+-----------
+
+Number and name of feature: #2 Templating
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 
+
+Finish time: 
+
+Actual time needed to complete: 
+
+-----------
+
+Number and name of feature: #3 Styling with Flexbox
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 
+
+Finish time: 
+
+Actual time needed to complete: 
+
+-----------
+
+Number and name of feature: #4 Sort the Images
+
+Estimate of time needed to complete: 1.5 hours
+
+Start time: 
+
+Finish time: 
+
+Actual time needed to complete: 
+
+-----------
