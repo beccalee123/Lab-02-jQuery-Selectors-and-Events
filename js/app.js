@@ -9,8 +9,6 @@ function Horns(horn) {
 }
 
 Horns.allHorns = [];
-
-
 let selectMenuArray = [];
 
 
@@ -30,7 +28,6 @@ Horns.prototype.render = function() {
   hornClone.attr('class', this.keyword);
 
   //Fills select menu
-
   if (!selectMenuArray.includes(this.keyword)) {
     selectMenuArray.push(this.keyword);
   }
@@ -43,28 +40,41 @@ const fillSelect = () => {
 }
 
 
-Horns.readJson = () => {
-  $.get('data/page-1.json', 'json').then(data => {
+Horns.readJson = (filename) => {
+  Horns.allHorns = [];
+  $.get(filename, 'json').then(data => {
     data.forEach(obj => {
       Horns.allHorns.push(new Horns(obj));
     });
-  }).then(Horns.loadHorns);
+  }).then(Horns.loadHorns).then(fillSelect);
 };
-
-
 
 Horns.loadHorns = () => {
   Horns.allHorns.forEach( horn => horn.render() );
-  $('#photo-template').remove();
-  fillSelect();
+  $('#photo-template').hide();
 }
-
-$( () => Horns.readJson() );
-
-// Select menu handling/filtering
 
 $('#hornfilter').on('change', function () {
   let $selection = $(this).val();
   $('div').hide();
   $(`.${$selection}`).show();
 });
+
+$('#one').on('click', function () {
+  console.log('one clicked');
+  $('div').hide();
+  $( () => Horns.readJson('data/page-1.json') );
+});
+
+$('#two').on('click', function () {
+  console.log('two clicked');
+  $('div').hide();
+  $( () => Horns.readJson('data/page-2.json') );
+});
+
+function pageLoad() {
+  $( () => Horns.readJson('data/page-1.json') );
+  $( () => Horns.readJson('data/page-2.json') );
+}
+
+pageLoad();
