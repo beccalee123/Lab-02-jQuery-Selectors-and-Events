@@ -1,5 +1,5 @@
 # Lab-02-jQuery-Selectors-and-Events
-Lab 2 for Code Fellows seattle-301d40. Paired programming by Andrew Quamme and Becca Lee
+Lab 2 for Code Fellows seattle-301d40. Paired programming by Andrew Quamme, Becca Lee, and Heather Cherewaty
 
 Special thank to [demo-read-json demo](https://github.com/beccalee123/seattle-301d40/tree/master/02-jquery-selectors-events/demo-read-json) by the Code Fellows staff for the excellent guidance on our photo rendering.  
 
@@ -59,11 +59,11 @@ Number and name of feature: #2 Templating
 
 Estimate of time needed to complete: 1 hour
 
-Start time: 
+Start time: 10:15am
 
-Finish time: 
+Finish time: 12:39pm
 
-Actual time needed to complete: 
+Actual time needed to complete: 2 hours and 24 minutes
 
 -----------
 
