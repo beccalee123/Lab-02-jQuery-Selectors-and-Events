@@ -1,34 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>The Gallery of Horns</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Pirata+One" rel="stylesheet">
-  </head>
-  <body>
-    <header>
-      <h1>The Gallery of Horns</h1>
-      <nav>
-        <button id="one">Page 1</button>
-        <button id="two">Page 2</button>
-      </nav>
-    </header>
-    <select id="hornfilter">
-      <option value="default">Filter by Keyword</option>
-    </select>
-    <main>
-      <section id="photo-template">
-        <h2></h2>
-        <img src="" alt="">
-        <p></p>
-      </section>
-    </main>
-    <footer>
-      &copy; 2018 Code Fellows
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
-  </body>
+
+<head>
+  <title>The Gallery of Horns</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Pirata+One" rel="stylesheet">
+  <script id="horn-template" type="text/x-handlebars-template">
+        <section id="photo-template">
+          <h2>{{this.title}}</h2>
+            <img src={{this.image_url}} alt={{this.description}}>
+            <p>{{this.description}}</p>
+        </section>
+    </script>
+</head>
+
+<body>
+  <header>
+    <h1>The Gallery of Horns</h1>
+    <nav>
+      <button id="one">Page 1</button>
+      <button id="two">Page 2</button>
+    </nav>
+  </header>
+  <select id="hornfilter">
+    <option value="default">Filter by Keyword</option>
+  </select>
+  <main>
+
+  </main>
+  <footer>
+    &copy; 2018 Code Fellows
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+</body>
+
 </html>
