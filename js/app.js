@@ -1,5 +1,8 @@
 'use strict';
 
+const source   = document.getElementById('horn-template').innerHTML;
+const template = Handlebars.compile(source);
+
 function Horns(horn) {
   this.image_url = horn.image_url;
   this.title = horn.title;
@@ -88,4 +91,6 @@ $(() => Horns.readJson('data/page-1.json'));
 }
 
 pageLoad();
+
+
 
