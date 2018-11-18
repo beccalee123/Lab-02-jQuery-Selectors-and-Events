@@ -47,11 +47,11 @@ Number and name of feature: #1 Pagination
 
 Estimate of time needed to complete: 1 hour
 
-Start time: 
+Start time: 10:15am
 
-Finish time: 
+Finish time: 12:39pm
 
-Actual time needed to complete: 
+Actual time needed to complete: 2 hours and 24 minutes
 
 -----------
 
@@ -59,11 +59,11 @@ Number and name of feature: #2 Templating
 
 Estimate of time needed to complete: 1 hour
 
-Start time: 10:15am
+Start time: 
 
-Finish time: 12:39pm
+Finish time: 
 
-Actual time needed to complete: 2 hours and 24 minutes
+Actual time needed to complete: 
 
 -----------
 
