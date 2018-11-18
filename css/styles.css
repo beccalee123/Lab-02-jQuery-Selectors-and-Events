@@ -1,6 +1,7 @@
 body {
-  width: 960px;
+  width: 100%;
   margin: 0px auto;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 img {
@@ -16,30 +17,52 @@ h1 {
   font-family: 'Pirata One', cursive;
   font-size: 40px;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 30px;
   text-align: center;
   margin-top: 20px;
+  font-family: 'Pirata One', cursive;
+  text-transform: capitalize
 }
 
-div {
-  float: left;
+section, nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 p {
   width: 250px;
   height: 50px;
   margin: 10px auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: darkslategray;
+  text-align: center;
 }
 
-/* select {
-  display: block;
-  margin: 30px auto;
-} */
+button, input, select {
+  margin-left: 30px;
+}
+
+nav {
+  width: 100%;
+}
 
 footer {
   display: block;
   clear: both;
+  text-align: center;
+}
+
+button {
+  border-radius: 5px;
+  width: 100px;
+  background-color: darkslategray;
+  color: white;
+  font-weight: bold;
 }
