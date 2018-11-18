@@ -45,8 +45,10 @@ Horns.readJson = (filename) => {
 };
 
 Horns.loadHorns = () => {
+  // Horns.allHorns.sort((a,b) => a.horns - b.horns)
   Horns.allHorns.forEach(horn => $('#photo-template').append(horn.render()));
 }
+
 
 $('#hornfilter').on('change', function () {
   let $selection = $(this).val();
@@ -67,6 +69,30 @@ $('#two').on('click', function () {
   $('option').remove();
   $(() => Horns.readJson('data/page-2.json'));
 
+});
+
+$('#number-horns').on('change', function () {
+  console.log('Horn number');
+  $('div').remove();
+  Horns.allHorns.sort((a,b) => a.horns - b.horns)
+  Horns.loadHorns();
+});
+
+$('#title-horn').change(function () {
+  console.log('title sort');
+  $('div').remove();
+  Horns.allHorns.sort((a,b) => {
+    a = a.title.toUpperCase();
+    b = b.title.toUpperCase();
+    if (a < b) {
+      return -1;
+    }
+    if (a > b) {
+      return 1;
+    }
+    return 0;
+  });
+  Horns.loadHorns();
 });
 
 function pageLoad() {
