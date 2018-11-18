@@ -83,10 +83,10 @@ Number and name of feature: #4 Sort the Images
 
 Estimate of time needed to complete: 1.5 hours
 
-Start time: 
+Start time: 10:15
 
-Finish time: 
+Finish time: 11:36
 
-Actual time needed to complete: 
+Actual time needed to complete: 1 hour 21 minutes
 
 -----------
