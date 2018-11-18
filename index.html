@@ -8,11 +8,11 @@
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css?family=Pirata+One" rel="stylesheet">
   <script id="horn-template" type="text/x-handlebars-template">
-        <section id="photo-template">
-          <h2>{{this.title}}</h2>
-            <img src={{this.image_url}} alt={{this.description}}>
-            <p>{{this.description}}</p>
-        </section>
+        <div class={{keyword}}>
+          <h2>{{title}}</h2>
+            <img src={{image_url}} alt={{description}}>
+            <p>{{description}}</p>
+        </div>
     </script>
 </head>
 
@@ -22,13 +22,13 @@
     <nav>
       <button id="one">Page 1</button>
       <button id="two">Page 2</button>
+      <select id="hornfilter">
+        <option value="default">Filter by Keyword</option>
+      </select>
     </nav>
   </header>
-  <select id="hornfilter">
-    <option value="default">Filter by Keyword</option>
-  </select>
   <main>
-
+    <section id="photo-template"></section>
   </main>
   <footer>
     &copy; 2018 Code Fellows

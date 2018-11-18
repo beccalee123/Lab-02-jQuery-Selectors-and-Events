@@ -1,7 +1,6 @@
 'use strict';
 
-const source   = document.getElementById('horn-template').innerHTML;
-const template = Handlebars.compile(source);
+
 
 function Horns(horn) {
   this.image_url = horn.image_url;
@@ -16,21 +15,9 @@ Horns.allHorns = [];
 
 
 Horns.prototype.render = function () {
-  $('main').append('<div class="clone"></div>');
-  let hornClone = $('.clone');
-
-  let hornHTML = $('#photo-template').html();
-
-  hornClone.html(hornHTML);
-
-  hornClone.find('h2').text(this.title);
-  hornClone.find('img').attr('src', this.image_url);
-  hornClone.find('img').attr('alt', this.description);
-  hornClone.find('p').text(this.description);
-  hornClone.removeClass('clone');
-  hornClone.attr('class', this.keyword);
-
-
+  const source   = $('#horn-template').html();
+  const template = Handlebars.compile(source);
+  return template(this);
 };
 
 const fillSelect = () => {
@@ -41,12 +28,10 @@ const fillSelect = () => {
     }
   });
   if ($('option').length <= 1 ) {
-    console.log('heyyyyyyyy');
     selectMenuArray.forEach( (value) => {
       $('select').append(`<option value="${value}">${value}</option>`);
     })
   }
-  //Fills select menu
 }
 
 
@@ -60,8 +45,7 @@ Horns.readJson = (filename) => {
 };
 
 Horns.loadHorns = () => {
-  Horns.allHorns.forEach(horn => horn.render());
-  $('#photo-template').hide();
+  Horns.allHorns.forEach(horn => $('#photo-template').append(horn.render()));
 }
 
 $('#hornfilter').on('change', function () {
@@ -86,8 +70,7 @@ $('#two').on('click', function () {
 });
 
 function pageLoad() {
-$(() => Horns.readJson('data/page-1.json'));
-  // $(() => Horns.readJson('data/page-2.json'));
+  $(() => Horns.readJson('data/page-1.json'));
 }
 
 pageLoad();

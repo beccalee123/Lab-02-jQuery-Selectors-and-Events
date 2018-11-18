@@ -59,11 +59,11 @@ Number and name of feature: #2 Templating
 
 Estimate of time needed to complete: 1 hour
 
-Start time: 
+Start time: 9:30 AM
 
-Finish time: 
+Finish time: 10:08 AM
 
-Actual time needed to complete: 
+Actual time needed to complete: 38 minutes
 
 -----------
 
