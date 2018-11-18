@@ -21,7 +21,7 @@ Horns.prototype.render = function () {
 };
 
 const fillSelect = () => {
-  let selectMenuArray = [];
+  let selectMenuArray = ['Filter by Keyword'];
   Horns.allHorns.forEach((object) => {
     if (!selectMenuArray.includes(object.keyword)) {
       selectMenuArray.push(object.keyword);
@@ -45,15 +45,38 @@ Horns.readJson = (filename) => {
 };
 
 Horns.loadHorns = () => {
-  // Horns.allHorns.sort((a,b) => a.horns - b.horns)
+  Horns.sortHorns();
   Horns.allHorns.forEach(horn => $('#photo-template').append(horn.render()));
+}
+
+Horns.sortHorns = () => {
+  $('div').remove();
+  if($('#number-horns')[0].checked) {
+    Horns.allHorns.sort((a,b) => a.horns - b.horns)
+  } else if($('#title-horn')[0].checked){
+    Horns.allHorns.sort((a,b) => {
+      a = a.title.toUpperCase();
+      b = b.title.toUpperCase();
+      if (a < b) {
+        return -1;
+      }
+      if (a > b) {
+        return 1;
+      }
+      return 0;
+    });
+  }
 }
 
 
 $('#hornfilter').on('change', function () {
   let $selection = $(this).val();
-  $('div').hide();
-  $(`.${$selection}`).show();
+  if ($selection === 'Filter by Keyword') {
+    $('div').show();
+  } else {
+    $('div').hide();
+    $(`.${$selection}`).show();
+  }
 });
 
 $('#one').on('click', function () {
@@ -72,26 +95,10 @@ $('#two').on('click', function () {
 });
 
 $('#number-horns').on('change', function () {
-  console.log('Horn number');
-  $('div').remove();
-  Horns.allHorns.sort((a,b) => a.horns - b.horns)
   Horns.loadHorns();
 });
 
 $('#title-horn').change(function () {
-  console.log('title sort');
-  $('div').remove();
-  Horns.allHorns.sort((a,b) => {
-    a = a.title.toUpperCase();
-    b = b.title.toUpperCase();
-    if (a < b) {
-      return -1;
-    }
-    if (a > b) {
-      return 1;
-    }
-    return 0;
-  });
   Horns.loadHorns();
 });
 
